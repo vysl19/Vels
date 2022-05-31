@@ -12,5 +12,6 @@ namespace ContactService.Data
 
         void Delete(int id);
         List<Contact> List(string personUuid);
+        List<Contact> GetAllContacts();
     }
 }

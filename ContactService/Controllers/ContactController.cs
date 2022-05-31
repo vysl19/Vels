@@ -23,8 +23,12 @@ namespace ContactService.Controllers
         {
             _contactRepository.Add(contact);
             _contactRepository.SaveChanges();            
-        }       
-
+        }
+        [HttpGet]
+        public ActionResult<IEnumerable<Contact>> GetContacts()
+        {
+            return Ok(_contactRepository.GetAllContacts());
+        }
         // DELETE api/<ContactController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)

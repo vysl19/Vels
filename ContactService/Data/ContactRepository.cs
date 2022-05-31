@@ -17,7 +17,10 @@ namespace ContactService.Data
         {
             _appDbContext.Contacts.Add(contact);
         }
-
+        public List<Contact> GetAllContacts()
+        {
+            return _appDbContext.Contacts.ToList();
+        }
         public void Delete(int id)
         {
             var contact = _appDbContext.Contacts.FirstOrDefault(x => x.Id == id);
